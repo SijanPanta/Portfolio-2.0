@@ -52,10 +52,9 @@ export function Navigation() {
           {navItems.map((item) => (
             <Button
               key={item.id}
-              variant="ghost"
+              variant="outline"
               size="sm"
               onClick={() => scrollToSection(item.id)}
-              className={activeSection === item.id ? "text-accent" : ""}
             >
               {item.label}
             </Button>

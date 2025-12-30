@@ -2,6 +2,8 @@
 
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import TextType from './TextType';
+import Threads from './Threads';
 
 export function HeroSection() {
   return (
@@ -12,7 +14,13 @@ export function HeroSection() {
           <h1 className="text-balance text-5xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl">
             Sijan Panta
           </h1>
-          <p className="text-balance text-2xl text-muted-foreground md:text-3xl">Building systems, solving problems</p>
+          <TextType 
+          text={["Student","Frontend Developer","Learner" ]}
+            typingSpeed={75}
+          pauseDuration={1500}
+          showCursor={true}
+          cursorCharacter="|"
+          />
         </div>
         <p className="max-w-2xl text-pretty text-lg leading-relaxed text-foreground/80">
           IT and business student from Nepal with hands-on experience in software development, system design, and
