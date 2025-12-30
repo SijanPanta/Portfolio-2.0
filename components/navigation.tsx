@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("")
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,6 +30,7 @@ export function Navigation() {
     const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
+      setIsMenuOpen(false) // Close menu after navigation
     }
   }
 
@@ -48,10 +51,12 @@ export function Navigation() {
         >
           SP
         </button>
+        
+        {/* Desktop Navigation */}
         <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <Button
-            className="cursor-pointer"
+              className="cursor-pointer"
               key={item.id}
               variant="outline"
               size="sm"
@@ -61,7 +66,34 @@ export function Navigation() {
             </Button>
           ))}
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden text-foreground hover:text-accent"
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMenuOpen && (
+        <div className="absolute top-full right-0 md:hidden border border-border bg-background shadow-lg rounded-bl-lg min-w-[200px]">
+          <div className="flex flex-col gap-2 px-6 py-4">
+            {navItems.map((item) => (
+              <Button
+                key={item.id}
+                variant="outline"
+                size="sm"
+                onClick={() => scrollToSection(item.id)}
+                className="w-full cursor-pointer"
+              >
+                {item.label}
+              </Button>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   )
 }
