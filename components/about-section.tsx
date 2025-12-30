@@ -8,7 +8,7 @@ export function AboutSection() {
   const highlights = [
     {
       icon: GraduationCap,
-      title: "IT & Business Student",
+      title: "IT Student",
       description: "Building strong fundamentals in computer science and system architecture"
     },
     {
