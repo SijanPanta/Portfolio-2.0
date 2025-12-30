@@ -65,7 +65,7 @@ export function EducationSection() {
                   <p className="text-sm text-muted-foreground">Frontend Masters• 2024</p>
                 </div>
                 <div className="space-y-1">
-                  <p className="font-medium text-card-foreground">Node Js </p>
+                  <p className="font-medium text-card-foreground">Node Js Training </p>
                   <p className="text-sm text-muted-foreground">Code with Mosh • 2025</p>
                 </div>
                 

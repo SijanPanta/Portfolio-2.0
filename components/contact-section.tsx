@@ -20,19 +20,25 @@ export function ContactSection() {
                 reach out.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Button size="lg" className="gap-2">
-                  <Mail className="h-4 w-4" />
-                  sijan.panta@email.com
+                <Button size="lg" className="gap-2" asChild>
+                  <a href="mailto:cjan1102@gmail.com">
+                    <Mail className="h-4 w-4" />
+                    cjan1102@gmail.com
+                  </a>
                 </Button>
-                <Button variant="outline" size="lg" className="gap-2 bg-transparent">
-                  <Linkedin className="h-4 w-4" />
-                  LinkedIn
-                  <ExternalLink className="h-3 w-3" />
+                <Button variant="outline" size="lg" className="gap-2 bg-transparent" asChild>
+                  <a href="https://www.linkedin.com/in/sijan-panta/" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-4 w-4" />
+                    LinkedIn
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
                 </Button>
-                <Button variant="outline" size="lg" className="gap-2 bg-transparent">
-                  <Github className="h-4 w-4" />
-                  GitHub
-                  <ExternalLink className="h-3 w-3" />
+                <Button variant="outline" size="lg" className="gap-2 bg-transparent" asChild>
+                  <a href="https://github.com/sijanpanta" target="_blank" rel="noopener noreferrer">
+                    <Github className="h-4 w-4" />
+                    GitHub
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
                 </Button>
               </div>
             </div>
