@@ -17,8 +17,8 @@ export function EducationSection() {
                   <GraduationCap className="h-6 w-6 text-accent" />
                 </div>
                 <div className="flex-1 space-y-1">
-                  <h3 className="text-lg font-semibold text-card-foreground">Bachelor's in Information Technology</h3>
-                  <p className="text-sm text-muted-foreground">University in Nepal</p>
+                  <h3 className="text-lg font-semibold text-card-foreground">Bachelor's in Computer Science and Information Technology</h3>
+                  <p className="text-sm text-muted-foreground">Tribhuvan University, Nepal</p>
                   <p className="text-sm font-medium text-accent">2022 - Present</p>
                 </div>
               </div>
@@ -61,20 +61,17 @@ export function EducationSection() {
               </div>
               <div className="space-y-3">
                 <div className="space-y-1">
-                  <p className="font-medium text-card-foreground">Python for Data Science & AI</p>
-                  <p className="text-sm text-muted-foreground">Online Learning Platform • 2024</p>
+                  <p className="font-medium text-card-foreground">Frontend Training</p>
+                  <p className="text-sm text-muted-foreground">Frontend Masters• 2024</p>
                 </div>
                 <div className="space-y-1">
-                  <p className="font-medium text-card-foreground">Database Design & SQL Fundamentals</p>
-                  <p className="text-sm text-muted-foreground">Online Learning Platform • 2023</p>
+                  <p className="font-medium text-card-foreground">Node Js </p>
+                  <p className="text-sm text-muted-foreground">Code with Mosh • 2025</p>
                 </div>
+                
                 <div className="space-y-1">
-                  <p className="font-medium text-card-foreground">Dean's List</p>
-                  <p className="text-sm text-muted-foreground">Academic Excellence Award • 2023, 2024</p>
-                </div>
-                <div className="space-y-1">
-                  <p className="font-medium text-card-foreground">Best Project Award - Hackathon</p>
-                  <p className="text-sm text-muted-foreground">University Tech Fest • 2024</p>
+                  <p className="font-medium text-card-foreground">2nd runnerup in Idea for Impact</p>
+                  <p className="text-sm text-muted-foreground">King's College • 2025</p>
                 </div>
               </div>
             </div>
