@@ -1,90 +1,161 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
-import { Users, Award, Calendar } from "lucide-react"
-
-const experiences = [
-  {
-    icon: Users,
-    title: "Tech Community Lead",
-    organization: "University Tech Club",
-    period: "2023 - Present",
-    description:
-      "Leading technical workshops and coding sessions for 100+ students. Organized hackathons and invited industry speakers to share real-world insights.",
-    achievements: [
-      "Increased club membership by 60%",
-      "Organized 3 successful hackathons",
-      "Conducted weekly coding workshops",
-    ],
-  },
-  {
-    icon: Award,
-    title: "Student Ambassador",
-    organization: "Tech Education Initiative",
-    period: "2023 - 2024",
-    description:
-      "Represented the university at tech events and conferences. Mentored junior students in programming fundamentals and career guidance.",
-    achievements: [
-      "Mentored 25+ students in programming",
-      "Represented at 5 regional tech conferences",
-      "Created study resources for C programming",
-    ],
-  },
-  {
-    icon: Calendar,
-    title: "Event Coordinator",
-    organization: "Annual Tech Symposium",
-    period: "2024",
-    description:
-      "Coordinated logistics and technical arrangements for university tech symposium with 500+ attendees. Managed speaker sessions and workshop schedules.",
-    achievements: [
-      "Successfully organized event with 500+ attendees",
-      "Coordinated 15+ technical workshops",
-      "Secured sponsorships worth $5000+",
-    ],
-  },
-]
-
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Calendar, Users, GraduationCap, Award } from "lucide-react"
+import CountUp from './CountUp'
 export function ExperienceSection() {
   return (
     <section id="experience" className="py-20">
       <div className="space-y-8">
-        <div className="space-y-2">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground">Experience & Leadership</h2>
-          <div className="h-1 w-12 bg-accent" />
-          <p className="text-muted-foreground">Contributing to tech communities and leading student initiatives</p>
+        {/* Section Heading */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground">
+              Experience <span className="text-accent">&amp;</span> Leadership
+            </h2>
+            <div className="h-1 w-12 bg-accent" />
+            <p className="text-muted-foreground max-w-2xl">
+              Driving community growth and technical innovation through active
+              leadership, mentorship, and engagement in the global tech ecosystem.
+            </p>
+          </div>
+            <Button variant="default" size="lg" className="hidden md:inline-flex" >
+           <a href="/Sijan-Panta-cv.pdf" download>Download Resume</a>
+
+          </Button>
         </div>
-        <div className="space-y-6">
-          {experiences.map((exp) => {
-            const Icon = exp.icon
-            return (
-              <Card key={exp.title} className="border-l-4 border-l-accent bg-card p-6 transition-all hover:shadow-md">
+
+        {/* Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { label: "Volunteers Managed", value: "15+", icon: Users },
+            { label: "Workshops Hosted", value: "10", icon: Award },
+            { label: "Students Mentored", value: "50+", icon: GraduationCap },
+          ].map((stat) => (
+            <Card
+              key={stat.label}
+              className="relative flex flex-col gap-3 border-border bg-card p-6 overflow-hidden group hover:border-accent transition-all"
+            >
+              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                <stat.icon className="w-16 h-16 text-accent" />
+              </div>
+              <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                {stat.label}
+              </p>
+              <p className="text-3xl font-bold text-foreground relative z-10">
+                <CountUp
+
+  from={0}
+
+  to={parseInt(stat.value.replace("+", ""))}
+
+  separator=","
+
+  direction="up"
+
+  duration={2}
+
+  className="count-up-text"
+
+/>
+              </p>
+            </Card>
+          ))}
+        </div>
+
+        
+
+        {/* Timeline */}
+        <div className="relative space-y-8">
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
+          
+          {[
+            {
+              title: "Microsoft Student Ambassador",
+              org: "Global Reach",
+              time: "Jan 2023 - Present",
+              desc:
+                "Actively promoting technology adoption and digital literacy among students. Organizing Azure and cloud workshops.",
+              tags: ["Azure", "Public Speaking", "Community Building"],
+            },
+            {
+              title: "University IT Club President",
+              org: "University Tech Club",
+              time: "Aug 2021 - Dec 2022",
+              desc:
+                "Led a student organization of 100+ members and organized annual hackathons.",
+              tags: ["Leadership", "Budgeting", "Event Planning"],
+            },
+            {
+              title: "Volunteer Tech Mentor",
+              org: "Community Center",
+              time: "Jun 2021 - Aug 2021",
+              desc:
+                "Taught Python basics to underprivileged students using simplified curriculum.",
+              tags: ["Python", "Mentoring", "Education"],
+            },
+          ].map((item, index) => (
+            <div key={index} className="relative md:pl-20">
+              <div className="absolute left-6 top-6 w-4 h-4 rounded-full bg-accent border-4 border-background hidden md:block" />
+              
+              <Card className="border-border bg-card p-6 transition-all hover:border-accent">
                 <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="rounded-lg bg-accent/10 p-3">
-                      <Icon className="h-6 w-6 text-accent" />
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                    <div className="space-y-1">
+                      <h3 className="text-xl font-semibold text-card-foreground">
+                        {item.title}
+                      </h3>
+                      <p className="text-accent font-medium">{item.org}</p>
                     </div>
-                    <div className="flex-1 space-y-1">
-                      <h3 className="text-xl font-semibold text-card-foreground">{exp.title}</h3>
-                      <p className="text-sm text-muted-foreground">{exp.organization}</p>
-                      <p className="text-sm font-medium text-accent">{exp.period}</p>
-                    </div>
+                    <Badge variant="secondary" className="flex items-center gap-1 w-fit">
+                      <Calendar className="w-3 h-3" />
+                      {item.time}
+                    </Badge>
                   </div>
-                  <p className="leading-relaxed text-card-foreground/80">{exp.description}</p>
-                  <div className="space-y-2">
-                    <p className="text-sm font-semibold text-card-foreground">Key Achievements:</p>
-                    <ul className="space-y-1">
-                      {exp.achievements.map((achievement) => (
-                        <li key={achievement} className="flex items-start gap-2 text-sm text-card-foreground/70">
-                          <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
+
+                  <p className="text-card-foreground/70 leading-relaxed">
+                    {item.desc}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant="outline"
+                        className="bg-secondary/50 text-secondary-foreground"
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
               </Card>
-            )
-          })}
+            </div>
+          ))}
         </div>
+
+        {/* CTA */}
+        <Card className="border-border bg-gradient-to-r from-accent/5 to-transparent p-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-2">
+              <h3 className="text-2xl font-bold text-foreground">Ready to collaborate?</h3>
+              <p className="text-muted-foreground">
+                I'm always open to new projects and leadership opportunities.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              <Button size="lg" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+                Contact Me
+              </Button>
+              <Button variant="outline" size="lg" className="md:hidden">
+                Download Resume
+              </Button>
+            </div>
+          </div>
+        </Card>
       </div>
     </section>
   )

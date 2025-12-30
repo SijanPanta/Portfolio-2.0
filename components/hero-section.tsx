@@ -7,7 +7,7 @@ import Threads from './Threads';
 import Image from 'next/image';
 export function HeroSection() {
   return (
-    <section className="flex min-h-[80vh] flex-col justify-center py-20">
+    <section className="flex min-h-[82vh] flex-col justify-center py-20">
       <div className="flex flex-col lg:flex-row items-center gap-12">
         {/* Profile Photo */}
         <div className="flex-shrink-0">
@@ -33,15 +33,16 @@ export function HeroSection() {
           />
         </div>
         <p className="max-w-2xl text-pretty text-lg leading-relaxed text-foreground/80">
-          IT and business student from Nepal with hands-on experience in software development, system design, and
+          IT student from Nepal with hands-on experience in software development, system design, and
           academic projects. I combine technical fundamentals with problem-solving to create practical solutions.
         </p>
         <div className="flex flex-wrap gap-3">
-          <Button size="lg" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
+          <Button className="cursor-pointer" variant="default" size="lg" onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
             View Projects
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
           <Button
+            className="cursor-pointer"
             variant="outline"
             size="lg"
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}

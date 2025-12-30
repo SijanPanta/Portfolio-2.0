@@ -51,6 +51,7 @@ export function Navigation() {
         <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <Button
+            className="cursor-pointer"
               key={item.id}
               variant="outline"
               size="sm"
