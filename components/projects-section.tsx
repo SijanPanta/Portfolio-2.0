@@ -4,47 +4,57 @@ import { ExternalLink, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const projects = [
-  {
-    title: "C Compiler Parser",
-    description:
-      "Built a lexical analyzer and parser for a subset of C language, implementing tokenization and syntax tree generation using flex and bison.",
-    problem: "Understanding compiler construction through hands-on implementation",
-    solution: "Implemented lexer and parser phases with error handling",
-    outcome: "Gained deep understanding of compiler fundamentals and parsing techniques",
-    technologies: ["C", "Flex", "Bison", "Data Structures"],
-  },
-  {
-    title: "Cryptographic Security Suite",
-    description:
-      "Developed encryption and decryption programs implementing classic ciphers (Caesar, Vigenère) and modern algorithms (AES) with key management.",
-    problem: "Practical implementation of cryptographic algorithms",
-    solution: "Created modular encryption library with multiple cipher support",
-    outcome: "Enhanced understanding of security principles and implementation",
-    technologies: ["Python", "Cryptography", "Security", "Algorithms"],
-  },
-  {
-    title: "Network Packet Analyzer",
-    description:
-      "Simulated network traffic analysis tool that captures and analyzes packets, displaying protocol information and statistics.",
-    problem: "Understanding network protocols and packet structures",
-    solution: "Built packet capture and analysis system with protocol parsing",
-    outcome: "Comprehensive knowledge of TCP/IP stack and network security",
-    technologies: ["Python", "Networking", "Socket Programming", "Wireshark"],
-  },
-  {
-    title: "Student Management System",
-    description:
-      "Full-stack web application for managing student records, attendance, and grades with role-based access control.",
-    problem: "Streamlining academic record management",
-    solution: "Built CRUD application with authentication and authorization",
-    outcome: "Deployed system used by student organization",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "REST API"],
-  },
+{
+  title: "Web Calculator",
+  description:
+    "Developed a responsive web calculator using HTML, CSS, and JavaScript with a clean and intuitive interface for basic arithmetic operations.",
+  problem: "Need for a simple cross-platform utility to perform quick calculations.",
+  solution: "Built a fully responsive calculator web app with real-time interactive buttons and smooth UI.",
+  outcome: "Strengthened core JavaScript fundamentals and DOM manipulation skills.",
+  technologies: ["HTML", "CSS", "JavaScript"],
+  code: "https://github.com/SijanPanta/calculatorWeb",
+  deployed:"https://sijanpanta.github.io/calculatorWeb/"
+},
+{
+  title: "WordleMe",
+  description:
+    "A browser-based word guessing game inspired by Wordle, featuring real-time feedback, validation, and game state handling.",
+  problem: "Understanding interactive game logic and UI state management in frontend development.",
+  solution: "Implemented dynamic game logic, input validation, and visual feedback using vanilla JavaScript.",
+  outcome: "Improved understanding of state management and user interaction patterns.",
+  technologies: ["HTML", "CSS", "JavaScript"],
+  code: "https://github.com/SijanPanta/WordleMe",
+deployed:"https://wordle.sijanpanta.com.np"
+},
+{
+  title: "ASCOL IT Club Website & Event Systems",
+  description:
+    "Developed and maintained web systems for ASCOL IT Club, including event promotion, registration flows, and content updates for initiatives like Hackfest.",
+  problem: "Need for a centralized digital presence to manage IT club activities and events.",
+  solution: "Built responsive pages and components to showcase events, manage information, and improve student engagement.",
+  outcome: "Gained real-world experience working with teams, deadlines, and production-level frontend code.",
+  technologies: ["React", "Tailwind CSS", "JavaScript", "Git", "Team Collaboration"],
+  code: "https://github.com/SijanPanta/IT-Club-Website",
+  deployed:"https://ascolitclub.com"
+},
+{
+  title: "MOOL – Tech-Enabled Social Enterprise Marketplace",
+  description:
+    "A platform designed to empower Nepali communities by enabling the sale of local products, cultural storytelling, and sustainable tourism experiences.",
+  problem: "Local communities lack digital platforms to showcase and monetize cultural products and experiences.",
+  solution: "Designed a scalable marketplace concept combining e-commerce, storytelling, and impact tracking.",
+  outcome: "Developed product-thinking skills and experience in building socially impactful tech solutions.",
+  technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "System Design"],
+  code: "https://github.com/SijanPanta/MOOL",
+  deployed:"https://mool.sijanpanta.com.np"
+}
+
+
 ]
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects">
       <div className="space-y-8">
         <div className="space-y-2">
           <h2 className="text-3xl font-bold tracking-tight text-foreground">Projects</h2>
@@ -89,11 +99,11 @@ export function ProjectsSection() {
               <div className="mt-4 flex gap-2">
                 <Button variant="outline" size="sm" className="flex-1 bg-transparent">
                   <Github className="mr-2 h-4 w-4" />
-                  Code
+                  <a href={project.code} target="_blank" rel="noopener noreferrer">Source Code</a>
                 </Button>
                 <Button variant="outline" size="sm" className="flex-1 bg-transparent">
                   <ExternalLink className="mr-2 h-4 w-4" />
-                  Details
+                  <a href={project.deployed} target="_blank" rel="noopener noreferrer">Deployed Link</a>
                 </Button>
               </div>
             </Card>

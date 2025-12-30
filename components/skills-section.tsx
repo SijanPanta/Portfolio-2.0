@@ -24,7 +24,7 @@ const techLogos = [
 const skillCategories = [
   {
     category: "Programming Languages",
-    skills: ["C", "Python", "JavaScript", "Java", "SQL"],
+    skills: ["C", "C++", "JavaScript", "C#", "SQL"],
   },
   {
     category: "Core Concepts",
@@ -39,17 +39,17 @@ const skillCategories = [
   },
   {
     category: "Development Tools",
-    skills: ["Git & GitHub", "Linux/Unix", "VS Code", "Docker", "Postman"],
+    skills: ["Git & GitHub", "Linux/Unix", "VS Code",  "Postman","Vim"],
   },
   {
     category: "Technologies & Frameworks",
-    skills: ["React", "Node.js", "Express", "MongoDB", "REST APIs"],
+    skills: ["React", "Node.js", "Express", "MongoDB", "REST APIs","Next.js","Tailwind CSS" ],
   },
 ]
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="pt-20">
       <div className="space-y-8 mb-8">
         <div className="space-y-2">
           <h2 className="text-3xl font-bold tracking-tight text-foreground">Skills & Expertise</h2>
