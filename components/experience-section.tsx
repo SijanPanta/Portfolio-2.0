@@ -5,6 +5,20 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Calendar, Users, GraduationCap, Award } from "lucide-react"
 import CountUp from './CountUp'
+import Stack from './Stack'
+
+const images = [
+  "/events/DSC04038.jpg",
+  "/events/IMG_20241214_093900170~2.jpg",
+  // "/events/IMG-20250803-WiA0046.jpg",
+  "/events/IMG_0449.JPG",
+  "/events/IMG_0482.jpg",
+  "/events/IMG_20240929_092327944.jpg",
+  "/events/IMG_20250531_112915093.jpg",
+  "/events/IMG_20250629_172141947.jpg",
+  "/events/IMG_6827.JPG"
+];
+
 export function ExperienceSection() {
   return (
     <section id="experience" className="py-20">
@@ -30,9 +44,9 @@ export function ExperienceSection() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { label: "Volunteers Managed", value: "15+", icon: Users },
+            { label: "Volunteers Managed", value: "30+", icon: Users },
             { label: "Workshops Hosted", value: "10", icon: Award },
-            { label: "Students Mentored", value: "50+", icon: GraduationCap },
+            { label: "Students Mentored", value: "200+", icon: GraduationCap },
           ].map((stat) => (
             <Card
               key={stat.label}
@@ -73,29 +87,30 @@ export function ExperienceSection() {
           
           {[
             {
-              title: "Microsoft Student Ambassador",
-              org: "Global Reach",
-              time: "Jan 2023 - Present",
-              desc:
-                "Actively promoting technology adoption and digital literacy among students. Organizing Azure and cloud workshops.",
-              tags: ["Azure", "Public Speaking", "Community Building"],
-            },
-            {
-              title: "University IT Club President",
-              org: "University Tech Club",
-              time: "Aug 2021 - Dec 2022",
-              desc:
-                "Led a student organization of 100+ members and organized annual hackathons.",
-              tags: ["Leadership", "Budgeting", "Event Planning"],
-            },
-            {
-              title: "Volunteer Tech Mentor",
-              org: "Community Center",
-              time: "Jun 2021 - Aug 2021",
-              desc:
-                "Taught Python basics to underprivileged students using simplified curriculum.",
-              tags: ["Python", "Mentoring", "Education"],
-            },
+  title: "Fonepay Student Ambassador",
+  org: "Fonepay",
+  time: "2025 - 2025",
+  desc:
+    "Representing Fonepay at the campus level by promoting digital payment awareness, assisting in student-focused campaigns, and participating in the FSA Challenge to drive adoption of cashless solutions.",
+  tags: ["FinTech", "Digital Payments", "Community Outreach"],
+},
+{
+  title: "IT Club Treasurer",
+  org: "ASCOL IT Club",
+  time: "2023 - 2024",
+  desc:
+    "Managed club finances, prepared budget plans for technical events and hackathons, and supported the execution of initiatives such as ASCOL Hackfest by coordinating resources and logistics.",
+  tags: ["Budget Management", "Event Coordination", "Team Collaboration"],
+},
+{
+  title: "OSAC Executive Member",
+  org: "OSAC",
+  time: "2022 - 2023",
+  desc:
+    "Worked as part of the executive team to support student engagement activities, assist in orientation programs, and act as a bridge between students and academic administration.",
+  tags: ["Student Leadership", "Communication", "Event Support"],
+},
+
           ].map((item, index) => (
             <div key={index} className="relative md:pl-20">
               <div className="absolute left-6 top-6 w-4 h-4 rounded-full bg-accent border-4 border-background hidden md:block" />
@@ -136,26 +151,46 @@ export function ExperienceSection() {
           ))}
         </div>
 
-        {/* CTA */}
-        <Card className="border-border bg-gradient-to-r from-accent/5 to-transparent p-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Event Gallery */}
+        <Card className="border-border bg-card p-8 overflow-hidden">
+          <div className="space-y-6">
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-foreground">Ready to collaborate?</h3>
-              <p className="text-muted-foreground">
-                I'm always open to new projects and leadership opportunities.
+              <h3 className="text-2xl font-bold text-card-foreground">Event Gallery</h3>
+              <p className="text-card-foreground/70">
+                Moments captured from tech events, workshops, and community gatherings
               </p>
             </div>
-
-            <div className="flex flex-wrap gap-4">
-              <Button size="lg" onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
-                Contact Me
-              </Button>
-              <Button variant="outline" size="lg" className="md:hidden">
-                Download Resume
-              </Button>
+            
+            <div className="flex justify-center items-center py-8">
+              <div className="relative" style={{ width: 320, height: 320 }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 rounded-2xl blur-3xl" />
+                <Stack
+                  randomRotation={true}
+                  sensitivity={180}
+                  sendToBackOnClick={true}
+                  cards={images.map((src, i) => (
+                    <div 
+                      key={i}
+                      className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl border-4 border-background ring-2 ring-accent/20"
+                    >
+                      <img 
+                        src={src} 
+                        alt={`Event ${i + 1}`} 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  ))}
+                />
+              </div>
             </div>
+
+            <p className="text-center text-sm text-muted-foreground italic">
+              Click and drag to explore • Tap to cycle through photos
+            </p>
           </div>
         </Card>
+
       </div>
     </section>
   )
