@@ -10,24 +10,11 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Sijan Panta – IT & Software Developer",
   description:
-    "Portfolio of Sijan Panta, an IT and business student from Nepal with expertise in software development, system design, and academic projects.",
-  generator: "v0.app",
+    "Portfolio of Sijan Panta, an IT student from Nepal with expertise in software development, system design, and academic projects.",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/profile.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
 }
 
