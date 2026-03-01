@@ -13,7 +13,7 @@ export function HeroSection() {
         <div className="flex-shrink-0">
           <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 group">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 blur-xl"></div>
-           <Image src="/profile.JPG" alt="Sijan Panta" fill className="relative rounded-full border-4 border-background shadow-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-300" />
+           <Image src="/profile.webp" alt="Sijan Panta" fill className="relative rounded-full border-4 border-background shadow-2xl object-cover grayscale group-hover:grayscale-0 transition-all duration-300" />
           </div>
         </div>
 
